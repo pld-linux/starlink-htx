@@ -7,7 +7,8 @@ Release:	1
 # according to http://www.starlink.rl.ac.uk/store/conditions.html
 License:	GPL
 Group:		Applications/Text
-Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/htx/htx.tar.Z
+#Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/htx/htx.tar.Z
+Source0:	htx.tar.Z
 # Source0-md5:	cdd9c905f11bf292c81baa37f0499751
 URL:		http://www.starlink.rl.ac.uk/static_www/soft_further_HTX.html
 BuildArch:	noarch
