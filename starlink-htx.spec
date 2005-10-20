@@ -3,7 +3,7 @@ Summary(pl):	HTX - narzêdzia do odsy³aczy hipertekstowych
 Name:		starlink-htx
 # from URL: v1.2-7 release 218
 Version:	1.2_7.218
-Release:	2
+Release:	1.2
 # according to http://www.starlink.rl.ac.uk/store/conditions.html
 License:	GPL
 Group:		Applications/Text
@@ -13,6 +13,7 @@ URL:		http://www.starlink.rl.ac.uk/static_www/soft_further_HTX.html
 BuildArch:	noarch
 Requires(post,postun):	/sbin/ldconfig
 Requires(triggerpostun):	sed >= 4.0
+Requires:	glibc >= 6:2.3.5-7.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # FIXME: FHS for amd64
