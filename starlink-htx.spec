@@ -3,7 +3,7 @@ Summary(pl):	HTX - narzêdzia do odsy³aczy hipertekstowych
 Name:		starlink-htx
 # from URL: v1.2-7 release 218
 Version:	1.2_7.218
-Release:	1
+Release:	2
 # according to http://www.starlink.rl.ac.uk/store/conditions.html
 License:	GPL
 Group:		Applications/Text
@@ -12,10 +12,10 @@ Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/htx/htx.tar.Z
 URL:		http://www.starlink.rl.ac.uk/static_www/soft_further_HTX.html
 BuildArch:	noarch
 Requires(post,postun):	/sbin/ldconfig
-Requires(post,postun):	grep
-Requires(postun):	fileutils
+Requires(triggerpostun):	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# FIXME: FHS for amd64
 %define		stardir		/usr/lib/star
 
 %description
@@ -50,27 +50,22 @@ SYSTEM=ix86_Linux \
 	STARLINK=%{stardir} \
 	INSTALL=$RPM_BUILD_ROOT%{stardir}
 
+install -d $RPM_BUILD_ROOT/etc/ld.so.conf.d
+echo '%{stardir}/share' > $RPM_BUILD_ROOT/etc/ld.so.conf.d/%{name}.conf
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-umask 022
-if ! grep -q '^%{stardir}/share$' /etc/ld.so.conf ; then
-	echo '%{stardir}/share' >> /etc/ld.so.conf
-fi
-/sbin/ldconfig
+%post -p	/sbin/ldconfig
+%postun -p	/sbin/ldconfig
 
-%postun
-if [ "$1" = "0" ]; then
-	umask 022
-	grep -v "^%{stardir}/share$" /etc/ld.so.conf > /etc/ld.so.conf.tmp
-	mv -f /etc/ld.so.conf.tmp /etc/ld.so.conf
-fi
-/sbin/ldconfig
+%triggerpostun -- %{name} < 1.2_7.218-1.1
+sed -i -e "/^%(echo %{stardir}/share | sed -e 's,/,\\/,g')$/d" /etc/ld.so.conf
 
 %files
 %defattr(644,root,root,755)
 %doc htx.news
+%verify(not md5 mtime size) /etc/ld.so.conf.d/*.conf
 # starlink software hierarchy
 %dir %{stardir}
 %dir %{stardir}/bin
