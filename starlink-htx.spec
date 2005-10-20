@@ -3,7 +3,7 @@ Summary(pl):	HTX - narzêdzia do odsy³aczy hipertekstowych
 Name:		starlink-htx
 # from URL: v1.2-7 release 218
 Version:	1.2_7.218
-Release:	1.2
+Release:	2
 # according to http://www.starlink.rl.ac.uk/store/conditions.html
 License:	GPL
 Group:		Applications/Text
