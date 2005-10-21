@@ -66,7 +66,7 @@ sed -i -e "/^%(echo %{stardir}/share | sed -e 's,/,\\/,g')$/d" /etc/ld.so.conf
 %files
 %defattr(644,root,root,755)
 %doc htx.news
-%verify(not md5 mtime size) /etc/ld.so.conf.d/*.conf
+/etc/ld.so.conf.d/*.conf
 # starlink software hierarchy
 %dir %{stardir}
 %dir %{stardir}/bin
