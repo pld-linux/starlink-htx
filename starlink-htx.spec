@@ -1,5 +1,5 @@
 Summary:	HTX - Hypertext cross-reference utilities
-Summary(pl.UTF-8):   HTX - narzędzia do odsyłaczy hipertekstowych
+Summary(pl.UTF-8):	HTX - narzędzia do odsyłaczy hipertekstowych
 Name:		starlink-htx
 # from URL: v1.2-7 release 218
 Version:	1.2_7.218
