@@ -1,5 +1,5 @@
 Summary:	HTX - Hypertext cross-reference utilities
-Summary(pl):	HTX - narzêdzia do odsy³aczy hipertekstowych
+Summary(pl.UTF-8):   HTX - narzÄ™dzia do odsyÅ‚aczy hipertekstowych
 Name:		starlink-htx
 # from URL: v1.2-7 release 218
 Version:	1.2_7.218
@@ -26,12 +26,12 @@ each other. Its main element is a hypertext linker which can be used
 to establish cross-references between documents and to re-establish
 these whenever changes occur to individual documents.
 
-%description -l pl
-HTX to zbiór narzêdzi pozwalaj±cych na zarz±dzanie i dostêp do
-kolekcji dynamicznych wielostronnicowych dokumentów hipertekstowych
-odwo³uj±cych siê do siebie nawzajem. G³ównym elementem jest linker
-hipertekstowy, który mo¿e byæ u¿ywany do tworzenia odsy³aczy miêdzy
-dokumentami oraz odtwarzania ich po zmianach w poszczególnych
+%description -l pl.UTF-8
+HTX to zbiÃ³r narzÄ™dzi pozwalajÄ…cych na zarzÄ…dzanie i dostÄ™p do
+kolekcji dynamicznych wielostronnicowych dokumentÃ³w hipertekstowych
+odwoÅ‚ujÄ…cych siÄ™ do siebie nawzajem. GÅ‚Ã³wnym elementem jest linker
+hipertekstowy, ktÃ³ry moÅ¼e byÄ‡ uÅ¼ywany do tworzenia odsyÅ‚aczy miÄ™dzy
+dokumentami oraz odtwarzania ich po zmianach w poszczegÃ³lnych
 dokumentach.
 
 %prep
